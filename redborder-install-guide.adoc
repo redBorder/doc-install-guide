@@ -1,0 +1,21 @@
+:doctype: book
+:author: redborder
+:copyrights: GNU Affero General Public License
+:lang: es
+:docinfo:
+:revnumber: 1.0.0
+:keywords: redborder, quickstart, guide, manual
+:toc:
+:toc-title: Índice
+:toclevels: 3
+:toc-position: left
+:nofooter:
+:header:
+:icons: font
+:table-caption: Tabla
+:stem: latexmath
+
+= redborder install guide
+
+include::chapters/01-install.adoc[]
+
