@@ -17,5 +17,5 @@
 
 = redborder install guide
 
-include::chapters/01-install.adoc[]
+include::chapters/es-ES/01-install.adoc[]
 

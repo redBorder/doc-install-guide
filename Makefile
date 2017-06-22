@@ -3,14 +3,14 @@ OUTDIR=docs
 MAIN=$(BASE).adoc
 CHAPTERS=chapters
 
-.PHONY: html
-html: $(SOURCES) styles/$(CSS)
-	asciidoctor $(MAIN) -a stylesheet=./styles/rubygems.css --attribute tabsize=4 -o $(OUTDIR)/index.html
-	cp -r $(CHAPTERS)/images $(OUTDIR)
+.PHONY: es-html
+es-html: $(SOURCES) styles/$(CSS)
+	asciidoctor es-ES_$(MAIN) -a stylesheet=./styles/rubygems.css --attribute tabsize=4 -o $(OUTDIR)/es-ES/index.html
+	cp -r $(CHAPTERS)/images $(OUTDIR)/es-ES
 
-.PHONY: pdf
-pdf: $(SOURCES) styles/$(CSS)
-	asciidoctor-pdf $(MAIN) --attribute tabsize=4 -o $(OUTDIR)/$(BASE).pdf
+.PHONY: es-pdf
+es-pdf: $(SOURCES) styles/$(CSS)
+	asciidoctor-pdf es-ES_$(MAIN) --attribute tabsize=4 -o $(OUTDIR)/es-ES/$(BASE).pdf
 
 .PHONY: clean
 clean:
