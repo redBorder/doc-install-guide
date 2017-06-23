@@ -1,0 +1,63 @@
+== Capítulo 4: Sensores
+
+En este capítulo se describe el procedimiento para agregar nuevos sensores y dominios al Manager de redborder.
+
+*Sensors* se encuentra disponible en el margen superior derecho del menú de cabecera, junto a la sección *Tools* y la zona de usuario.
+
+image::images/sensors/sensors_menu.png["sensors_menu",align="center"]
+
+=== 4.1 Sensors: menú y opciones
+En este apartado se introduce de forma breve al menú *Sensors* y sus correspondientes opciones:
+
+* *Submenú de la sección*: en la que se encuentra las opciones disponibles para la configuración y gestión de los sensores.
+** Opciones (*Options*)
+** Añadir sensor (*+Add sensor*)
+** Añadir dominio (*+Add domain*)
+** Vista (*View*)
+* *Área principal*: la información que se muestra en este área dependerá de la vista seleccionada en *View*. Existen tres vistas disponibles para visualizar la organización de los sensores registrados en el Manager:
+** Árbol (*Tree*): listado que muestra la infraestructura de red según niveles de jerarquía y dependencia entre los elementos que la componen.
++
+Al lado de cada uno de los elementos se muestran dos iconos que permiten realizar las acciones de edición y borrado de los mismos. Esta es la vista que se muestra por defecto.
+** Proxies clientes (*Client Proxies*): listado que muestra los proxies clientes por orden alfabético
+** Sensores Flow (*Flow sensors*): listado que muestra los sensores de tipo flow por orden alfabético.
+
+TIP: Cada vista presenta su propio menú de opciones y las diferentes posibilidades de creación y edición de sensores o dominios.
+
+=== 4.2 Añadir un sensor
+
+Para añadir un sensor debe seleccionar la opción *+Add Sensor*. En el menú desplegable se muestran los diferentes tipos de sensores que pueden añadirse al árbol. Seleccione el tipo de sensor en el menú desplegable y a continuación, complete la información que se solicita.
+
+[NOTE]
+===============================
+La forma de añadir un sensor de tipo flow es mediante la dirección IP desde la que se envían los flows.
+===============================
+
+image::images/sensors/add_sensors_dialog.png["add_sensors_dialog",align="center"]
+
+[IMPORTANT]
+=================================
+En el momento en el que se crea un sensor en el manager, este pasa, por defecto, a colocarse como raíz, por encima del nivel de dominio.
+
+El usuario puede organizar su infraestructura de sensores en cualquier momento, arrastrando y soltando el sensor en el nivel en el que se quiera colocar.
+
+El sensor heredará de manera automática las propiedades del dominio raíz.
+=================================
+
+=== 4.3 Añadir un dominio
+
+Para añadir un dominio se debe seleccionar la opción *+Add Domain* que se encuentra en el submenú superior derecho, elegir el tipo de dominio que se quiere añadir, y a continuación, rellenar los campos requeridos (estos variarán según el tipo de dominio a crear)
+
+image::images/sensors/add_domain_menu.png["add_domain_menu",align="center"]
+
+image::images/sensors/add_domain_dialog.png["add_domain_dialog",align="center"]
+
+=== 4.4 Editar un dominio
+Para acceder a la edición de un dominio se debe hacer clic en el icono "Editar" situado a la derecha del dominio que desea editar desde la vista de árbol y seleccionar la opción *Edit*.
+
+Estos son algunos de los datos que se pueden editar en un dominio. Dependiendo del tipo de dominio que se seleccione, aparecerán unos campos u otros:
+
+* *General*: muestra información general del sensor. Nombre (no editable), tipo de dominio y descripción.
+* *Namespace Rules*: permite añadir reglas que se aplicarán a nivel de dominio.
+* *Servidores (Servers)*: En este apartado el usuario puede definir la configuración de los servidores Proxy y Syslog. Todos los valores que se muestran son los heredados por defecto. Sobreescribir en caso de que sea necesario.
+* *Localización (Location)*:  Localiza el sensor o el dominio en un mapamundi.
+

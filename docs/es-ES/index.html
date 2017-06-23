@@ -716,6 +716,35 @@ b.conum * { color: inherit !important; }
 <li><a href="#_configuración_inicial_wizard">Configuración inicial - Wizard</a></li>
 </ul>
 </li>
+<li><a href="#_capítulo_2_licencias">Capítulo 2: Licencias</a></li>
+<li><a href="#_capítulo_3_gestión_de_usuarios">Capítulo 3: Gestión de usuarios</a>
+<ul class="sectlevel2">
+<li><a href="#_configuración_de_usuarios">Configuración de usuarios</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_4_sensores">Capítulo 4: Sensores</a>
+<ul class="sectlevel2">
+<li><a href="#_4_1_sensors_menú_y_opciones">4.1 Sensors: menú y opciones</a></li>
+<li><a href="#_4_2_añadir_un_sensor">4.2 Añadir un sensor</a></li>
+<li><a href="#_4_3_añadir_un_dominio">4.3 Añadir un dominio</a></li>
+<li><a href="#_4_4_editar_un_dominio">4.4 Editar un dominio</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_7_actualización_del_cluster">Capítulo 7: Actualización del cluster</a>
+<ul class="sectlevel2">
+<li><a href="#_actualización_desde_repositorio_remoto">Actualización desde repositorio remoto</a></li>
+<li><a href="#_actualización_desde_iso_offline_mode">Actualización desde ISO (offline mode)</a></li>
+</ul>
+</li>
+<li><a href="#_capítulo_8_client_proxy">Capítulo 8: Client Proxy</a>
+<ul class="sectlevel2">
+<li><a href="#_8_1_introducción">8.1 Introducción</a></li>
+<li><a href="#_8_2_instalación">8.2 Instalación</a></li>
+<li><a href="#_8_3_registro">8.3 Registro</a></li>
+<li><a href="#_8_4_gestión_de_sensores">8.4 Gestión de sensores</a></li>
+<li><a href="#_8_5_actualización">8.5 Actualización</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1043,6 +1072,801 @@ la red de sincronismo de la misma forma que con la de gestión.</p>
 </div>
 <div class="paragraph">
 <p>Una vez se haya instalado y configurado el software, se podrá acceder a la aplicación web conectando mediante un navegador a la URL <code><a href="https://IP-de-gestion" class="bare">https://IP-de-gestion</a></code> usando como usuario y password por defecto <code>admin</code> (usuario) y <code>redborder</code> (password). Para la conexión por consola, se puede hacer por consola directa (tty) o remota (ssh) usando el usuario root y el password suministrado durante el proceso de instalación, que por defecto es <code>redborder</code>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/install/install-10.png" alt="install-10">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_2_licencias">Capítulo 2: Licencias</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este capítulo se describe el proceso para licenciar sensores en la plataforma redborder.</p>
+</div>
+<div class="paragraph">
+<p>Es necesario disponer de una licencia válida para poder dar de alta sensores y visualizar datos. Si intentamos dar de alta
+un nuevo sensor sin disponer de una licencia válida, nos aparecerá un mensaje indicando que es necesario solicitar una licencia.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/license/license-06.png" alt="license-06">
+</div>
+</div>
+<div class="paragraph">
+<p>Para acceder al menú de gestión de licencias tenemos que autenticarnos como administrador en el manager.
+A través de la interfaz web nos dirigimos a <strong>Tools &#8594; Licenses</strong>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/license/license-01.png" alt="license-01">
+</div>
+</div>
+<div class="paragraph">
+<p>Dentro de esta vista podemos gestionar las licencias que tenemos cargadas en el manager.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/license/license-02.png" alt="license-02">
+</div>
+</div>
+<div class="paragraph">
+<p>En una instalación nueva nos encontraremos con la vista que se muestra arriba, donde aún no se ha cargado ninguna licencia.</p>
+</div>
+<div class="paragraph">
+<p>Para obtener una licencia debemos pulsar en el botón "Request license". Nos aparecerá un formulario donde tendremos que
+indicar la cantidad de MB diarios que se van a consumir y el número máximo de sensores de cada tipo.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/license/license-05.png" alt="license-05">
+</div>
+</div>
+<div class="paragraph">
+<p>Una vez dispongamos del archivo de licencia (extensión .lic), para cargarla en el manager pulsaremos en el botón "Upload license"
+y subiremos el archivo.</p>
+</div>
+<div class="paragraph">
+<p>A partir de este momento podremos ver la licencia cargada en ésta vista.</p>
+</div>
+<div class="paragraph">
+<p>Dentro de esta vista podemos ver todas las licencias que tenemos cargadas y activas, la cantidad de bytes diarios consumidos o
+el límite de sensores de cada tipo que podemos usar.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/license/license-04.png" alt="license-04">
+</div>
+</div>
+<div class="paragraph">
+<p>Un dato importante dentro de la vista de licencias es la cantidad de bytes diarios consumidos en el día actual. Si superamos este valor,
+automáticamente se dejarán de procesar eventos para los sensores asociados.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_3_gestión_de_usuarios">Capítulo 3: Gestión de usuarios</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>El alta o modificación de los datos de los usuarios, la gestión de sus permisos o la creación de nuevos registros es posible desde la
+interfaz de gestión de usuarios, accesible en <strong>Tools &#8594; Users</strong>.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/users/users-01.png" alt="users-01">
+</div>
+</div>
+<div class="paragraph">
+<p>Para buscar un usuario concreto es posible introducir sus datos en el buscador, o bien, navegar por el listado alfabético que se
+muestra sobre los usuarios dados de alta.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/users/users-02.png" alt="users-02">
+</div>
+</div>
+<div class="paragraph">
+<p>Sólo los usuarios con el rol de <strong>Administrador de dominio</strong> tiene habilitada esta función para poder administrar a los usuarios de su dominio.
+El resto de usuarios sólo podrá visualizar las diferentes secciones de la plataforma, pero no modificar su contenido (salvo en el caso de
+su propio perfil de usuario).</p>
+</div>
+<div class="paragraph">
+<p>Además de los administradores de dominio, existe un usuario Super Administrador que puede administrar a todos los usuarios registrados
+en la plataforma.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Un usuario es <strong>Super Administrador</strong> sólo si es Administrador y su Top Domain es root
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>En el cuerpo de esta vista encontramos un listado de los usuarios dados de alta en la plataforma redborder,
+dirección de correo electrónico, Top Domain (máximo nivel al que tiene acceso el usuario), número de veces que
+ha hecho login, la IP y la hora desde las cuales realizó el último acceso.</p>
+</div>
+<div class="paragraph">
+<p>También podemos encontrar 2 botones en cada línea de usuario:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Botón de configuración de usuario</p>
+</li>
+<li>
+<p>Botón para eliminar usuario</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Para acceder directamente al menú de configuración de nuestro perfil de usuario, podemos hacerlo también pulsando sobre
+el nombre de usuario que aparece en la barra superior de herramientas, y pulsar sobre el botón <strong>My profile</strong></p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/users/users-04.png" alt="users-04">
+</div>
+</div>
+<div class="paragraph">
+<p>En éste área podemos encontrar también el botón de ayuda <strong>Show help</strong> y de <strong>Logout</strong>. Además nos aparecerán notificaciones
+relacionadas con la actividad del usuario.</p>
+</div>
+<div class="sect2">
+<h3 id="_configuración_de_usuarios">Configuración de usuarios</h3>
+<div class="paragraph">
+<p>Haciendo clic en el botón de configuración de un usuario podemos modificar los siguientes datos y visualizar
+un resumen de su estado y actividad dentro de la plataforma.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/users/users-03.png" alt="users-03">
+</div>
+</div>
+<div class="paragraph">
+<p>En el menú de configuración de usuario nos encontraremos las siguientes secciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Menú principal</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrator: Si lo activamos convertimos al usuario en Adminsitrador de dominio establecido en "Top Domain".</p>
+</li>
+<li>
+<p>Nombre</p>
+</li>
+<li>
+<p>Login/Username</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Top Domain: Dominio superior máximo al que el usuario puede acceder. El dominio de más alto nivel es <strong>root</strong>.</p>
+</li>
+<li>
+<p>Another actions: Nos encontramos 3 botones para realizar las siguientes acciones:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit password: Cambiar la contraseña de usuario.</p>
+</li>
+<li>
+<p>Recreate API Access Key: Regenerar la clave para acceso a la API Rest.</p>
+</li>
+<li>
+<p>Copy API Key to clipboard: Copiar la clave de acceso a la API Rest.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Menú Personalization</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>User home page: Página de inicio que debe de aparecer tras el login de usuario.</p>
+</li>
+<li>
+<p>Items per page: Número de eventos por defecto que se muestran en las secciones de visualización de datos.</p>
+</li>
+<li>
+<p>Better letter size: Tamaño de fuente.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Menú Stats</strong>: Muestra estadísticas de uso de la plataforma por parte del usuario.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Cada vez que deseemos modificar nuestra propia cuenta de usuario deberemos introducir la contraseña para poder aplicar los cambios.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_4_sensores">Capítulo 4: Sensores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este capítulo se describe el procedimiento para agregar nuevos sensores y dominios al Manager de redborder.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sensors</strong> se encuentra disponible en el margen superior derecho del menú de cabecera, junto a la sección <strong>Tools</strong> y la zona de usuario.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sensors/sensors_menu.png" alt="sensors_menu">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_1_sensors_menú_y_opciones">4.1 Sensors: menú y opciones</h3>
+<div class="paragraph">
+<p>En este apartado se introduce de forma breve al menú <strong>Sensors</strong> y sus correspondientes opciones:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Submenú de la sección</strong>: en la que se encuentra las opciones disponibles para la configuración y gestión de los sensores.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Opciones (<strong>Options</strong>)</p>
+</li>
+<li>
+<p>Añadir sensor (<strong>+Add sensor</strong>)</p>
+</li>
+<li>
+<p>Añadir dominio (<strong>+Add domain</strong>)</p>
+</li>
+<li>
+<p>Vista (<strong>View</strong>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Área principal</strong>: la información que se muestra en este área dependerá de la vista seleccionada en <strong>View</strong>. Existen tres vistas disponibles para visualizar la organización de los sensores registrados en el Manager:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Árbol (<strong>Tree</strong>): listado que muestra la infraestructura de red según niveles de jerarquía y dependencia entre los elementos que la componen.</p>
+<div class="paragraph">
+<p>Al lado de cada uno de los elementos se muestran dos iconos que permiten realizar las acciones de edición y borrado de los mismos. Esta es la vista que se muestra por defecto.</p>
+</div>
+</li>
+<li>
+<p>Proxies clientes (<strong>Client Proxies</strong>): listado que muestra los proxies clientes por orden alfabético</p>
+</li>
+<li>
+<p>Sensores Flow (<strong>Flow sensors</strong>): listado que muestra los sensores de tipo flow por orden alfabético.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Cada vista presenta su propio menú de opciones y las diferentes posibilidades de creación y edición de sensores o dominios.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_2_añadir_un_sensor">4.2 Añadir un sensor</h3>
+<div class="paragraph">
+<p>Para añadir un sensor debe seleccionar la opción <strong>+Add Sensor</strong>. En el menú desplegable se muestran los diferentes tipos de sensores que pueden añadirse al árbol. Seleccione el tipo de sensor en el menú desplegable y a continuación, complete la información que se solicita.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La forma de añadir un sensor de tipo flow es mediante la dirección IP desde la que se envían los flows.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sensors/add_sensors_dialog.png" alt="add_sensors_dialog">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>En el momento en el que se crea un sensor en el manager, este pasa, por defecto, a colocarse como raíz, por encima del nivel de dominio.</p>
+</div>
+<div class="paragraph">
+<p>El usuario puede organizar su infraestructura de sensores en cualquier momento, arrastrando y soltando el sensor en el nivel en el que se quiera colocar.</p>
+</div>
+<div class="paragraph">
+<p>El sensor heredará de manera automática las propiedades del dominio raíz.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_3_añadir_un_dominio">4.3 Añadir un dominio</h3>
+<div class="paragraph">
+<p>Para añadir un dominio se debe seleccionar la opción <strong>+Add Domain</strong> que se encuentra en el submenú superior derecho, elegir el tipo de dominio que se quiere añadir, y a continuación, rellenar los campos requeridos (estos variarán según el tipo de dominio a crear)</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sensors/add_domain_menu.png" alt="add_domain_menu">
+</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/sensors/add_domain_dialog.png" alt="add_domain_dialog">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_4_editar_un_dominio">4.4 Editar un dominio</h3>
+<div class="paragraph">
+<p>Para acceder a la edición de un dominio se debe hacer clic en el icono "Editar" situado a la derecha del dominio que desea editar desde la vista de árbol y seleccionar la opción <strong>Edit</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Estos son algunos de los datos que se pueden editar en un dominio. Dependiendo del tipo de dominio que se seleccione, aparecerán unos campos u otros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General</strong>: muestra información general del sensor. Nombre (no editable), tipo de dominio y descripción.</p>
+</li>
+<li>
+<p><strong>Namespace Rules</strong>: permite añadir reglas que se aplicarán a nivel de dominio.</p>
+</li>
+<li>
+<p><strong>Servidores (Servers)</strong>: En este apartado el usuario puede definir la configuración de los servidores Proxy y Syslog. Todos los valores que se muestran son los heredados por defecto. Sobreescribir en caso de que sea necesario.</p>
+</li>
+<li>
+<p><strong>Localización (Location)</strong>:  Localiza el sensor o el dominio en un mapamundi.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_7_actualización_del_cluster">Capítulo 7: Actualización del cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>En este capítulo se describe el procedimiento para actualizar un cluster de servidores Manager de redborder.</p>
+</div>
+<div class="paragraph">
+<p>El procedimiento será diferente en función de si se cuenta o no con conexión a Internet desde el cluster de redborder.</p>
+</div>
+<div class="sect2">
+<h3 id="_actualización_desde_repositorio_remoto">Actualización desde repositorio remoto</h3>
+<div class="paragraph">
+<p>Para realizar la actualización de un cluster en el que se dispone de acceso a Internet no será necesario contar previamente
+con una ISO de redborder. Tan sólo tendremos que ejecutar el script rb_cluster_update.sh en el nodo manager.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># rb_cluster_update.sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En primer lugar nos preguntará qué paquetes deseamos actualizar.
+Podemos optar por actualizar los paquetes del sistema, o los paquetes de redborder
+(lo cual supone la actualización de redborder).
+En este caso serán los paquetes de redborder (opción 2).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>##################################################################
+#  redBorder cluster ready to be updated
+##################################################################
+Which packages would you like to update:
+   1.- system packages
+   2.- redBorder packages
+   3.- both
+   4.- nothing
+Choose an option: 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación podremos indicar si deseamos actualizar desde un repositorio remoto
+(para lo cual necesitamos conexión a internet), o desde un repositorio local.</p>
+</div>
+<div class="paragraph">
+<p>En este caso nos interesa actualizar el sistema desde un repositorio remoto, por lo que indicaremos la opción 1.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Available repositories:
+   1.- remote (repo: http://repo.redborder.com/)
+   2.- local
+Choose an option: 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En el siguiente paso, tras detectar la versión actual del sistema, se preguntará por la versión a la que se desea actualizar,
+a partir de las que se tenga disponible en el repositorio remoto.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Detecting available redBorder versions:                    [  OK  ]
+ 1.-  3.1.79-5
+Choose a valid version: 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación el script nos mostrará el orden en que se vana actualizar los nodos del cluster.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>INFO: The following nodes will be updated in the following order:
+   * node1
+   * node2
+   * node3
+Are you sure you want to continue? (y/N) y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A partir de este momento se procederá a realizar la actualización del cluster.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_actualización_desde_iso_offline_mode">Actualización desde ISO (offline mode)</h3>
+<div class="paragraph">
+<p>Para realizar la actualización de un cluster que no tiene acceso a Internet será necesario contar previamente con
+la ISO de redborder de la versión a la que se desea actualizar. A partir de la ISO se realizará una actualización
+del repositorio local del nodo master del cluster, el cual será usado por los restantes nodos que conforman el cluster.</p>
+</div>
+<div class="paragraph">
+<p>Lo primero a realizar es ejecutar el script ​<strong>rb_cluster_update.sh</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Una vez se ejecute el script rb_cluster_update.sh entraremos en un “wizard” donde
+seremos guiados para realizar la actualización.</p>
+</div>
+<div class="paragraph">
+<p>En primer lugar nos preguntará qué paquetes deseamos actualizar. Podemos optar por actualizar los paquetes del sistema,
+o los paquetes de redborder (lo cual supone la actualización de redborder).
+En este caso serán los paquetes de redborder (opción 2).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>##################################################################
+#  redBorder cluster ready to be updated
+##################################################################
+Which packages would you like to update:
+   1.- system packages
+   2.- redBorder packages
+   3.- both
+   4.- nothing
+Choose an option: 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación podremos indicar si deseamos actualizar desde un repositorio remoto (para lo cual necesitamos conexión a internet),
+o desde un repositorio local.</p>
+</div>
+<div class="paragraph">
+<p>En este caso nos interesa actualizar el sistema desde un repositorio local, por indicaremos la opción 2.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Available repositories:
+   1.- remote (repo: http://repo.redborder.com/)
+   2.- local
+Choose an option: 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación el programa nos preguntará si deseamos actualizar el repositorio local a partir de una ISO de redborder.
+Esto nos permitirá incluir una nueva versión de redBorder en el repositorio local y tenerla disponible para que sea usada
+por todos los nodos del cluster.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Would you like to update local repo from a new ISO file? (y/N) y
+
+Set redBorder ISO path: /tmp/redBorder-3.1.79-5-x86_64-6.5-enterprise.iso
+
+Mounting ISO and copying files in local repo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En el siguiente paso, tras detectar la versión actual del sistema, se preguntará por la versión a la que se desea actualizar,
+a partir de las que se tenga disponible en el repositorio local.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Detecting available redBorder versions:                    [  OK  ]
+ 1.-  3.1.79-5
+Choose a valid version: 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Una vez seleccionamos la versión a actualizar, el programa nos informará de los nodos del cluster que van a ser actualizados
+y nos pedirá confirmación antes de comenzar el proceso.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>INFO: The following nodes will be updated in the following order:
+   * node1
+   * node2
+   * node3
+Are you sure you want to continue? (y/N) y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A partir de este momento se procederá a realizar la actualización del cluster.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capítulo_8_client_proxy">Capítulo 8: Client Proxy</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_8_1_introducción">8.1 Introducción</h3>
+<div class="paragraph">
+<p>El client proxy (proxy cliente) es un tipo especial de sensor. Más que un sensor, en realidad se trata de un sistema que representa al cluster allá donde se instale y al que se le pueden asociar sensores directamente. Su principal utilidad es poder instalarlo y asociarle sensores en redes e instalaciones que, por política de seguridad, no pueden acceder directamente al cluster de managers (o al servicio en la nube).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_2_instalación">8.2 Instalación</h3>
+<div class="paragraph">
+<p>Para la instalación, se procederá de un modo muy similar al manager. Usando la misma imagen ISO, cuando arranuqe y muestre el menú de instalación, seleccionaremos "Install Client Proxy".</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-01.png" alt="install 01">
+</div>
+</div>
+<div class="paragraph">
+<p>Tras esto, nos saldrá una lista de preguntas con respuestas por defecto, igual que el proceso de instalación del manager, salvo que al final nos preguntará por la URL del cluster al que conectar, con la URL de la cloud valor por defecto (visualizer.networkcloudmanager.com)</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-02.png" alt="install 02">
+</div>
+</div>
+<div class="paragraph">
+<p>Comienza por fin el proceso de instalación.</p>
+</div>
+<div class="paragraph">
+<p>Una vez finalizado, el sistema se reiniciará y nos aparecerá la terminal con el siguiente contenido:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-03.png" alt="install 03">
+</div>
+</div>
+<div class="paragraph">
+<p>En él, aparece información relativa al UUID asignado al client proxy, su dirección IP, la MAC e información sobre los servicios del cluster a los que representa:</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_3_registro">8.3 Registro</h3>
+<div class="paragraph">
+<p>Tras la instalación del client proxy, se requiere un paso más que consistirá en el registro del equipo en el cluster (ya sea on-premise o cluster en la nube). Para que este paso se cumpla con éxito, el client proxy deberá tener acceso https/443 al cluster (on-premise o en la nube) sin restricciones.</p>
+</div>
+<div class="paragraph">
+<p>El primer paso para el proceso de registro consiste en que el client proxy se identifica en el cluster como un sensor sin reclamar. Como el UUID del client proxy es conocido en el proceso de instalación, deberemos usar dicho UUID para localizar el equipo en la lista de sensores sin reclamar. Para ello, entramos en la web de redborder y vamos a Sensors &#8594; add sensor &#8594; Claim proxy.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-04.png" alt="install 04">
+</div>
+</div>
+<div class="paragraph">
+<p>A continuación le ponemos un nombre y el UUID que mostró en la instalación.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-05.png" alt="install 05">
+</div>
+</div>
+<div class="paragraph">
+<p>Si el client proxy con ese UUID realmente está entre los no reclamados, el sistema lo localizará y lo asignará al namespace al que pertenece el usuario como un sensor más.</p>
+</div>
+<div class="paragraph">
+<p>En principio, mientras se esté configurando así se indicará en su estado.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-06.png" alt="install 06">
+</div>
+</div>
+<div class="paragraph">
+<p>Si todo ha ido bien, una vez terminada la configuración y el proceso de registro y reclamación, aparecerá su nuevo estado:</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-07.png" alt="install 07">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_4_gestión_de_sensores">8.4 Gestión de sensores</h3>
+<div class="paragraph">
+<p>Se pueden dar de alta sensores gestionados por el client proxy de una manera muy similar a como se hace en el cluster directamente. Para ello, hay que ir a la vista de sensores, y en la fila del client proxy, a la derecha, aparece el botón del menú, al hacer click aparecerán las opciones siguientes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Edit</strong>: Accede a la vista de información del client proxy.</p>
+</li>
+<li>
+<p><strong>Add Sensor</strong>: Permite añadir sensores al client proxy.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/client-proxy/install-08.png" alt="install 08">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_5_actualización">8.5 Actualización</h3>
+<div class="paragraph">
+<p>La actualización del client proxy se realiza de igual forma que cualquier paquete de software de la distribución, mediante un repositorio yum. Para ello, ejecutaremos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[root@cp-9355 ~]# yum update redBorder-proxy
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.tedra.es
+ * elrepo: mirrors.coreix.net
+ * epel: mir01.syntis.net
+ * extras: mirror.tedra.es
+ * updates: mirror.tedra.es
+Setting up Update Process
+Resolving Dependencies
+--&gt; Running transaction check
+---&gt; Package redBorder-proxy.x86_64 0:3.1.79-7 will be updated
+---&gt; Package redBorder-proxy.x86_64 0:3.1.79-9 will be an update
+--&gt; Finished Dependency Resolution
+
+Dependencies Resolved
+
+===============================================================================================
+ Package                      Arch                Version             Repository          Size
+===============================================================================================
+Updating:
+ redBorder-proxy              x86_64              3.1.79-9            redBorder          220 M
+
+Transaction Summary
+===============================================================================================
+Upgrade       1 Package(s)
+
+Total download size: 220 M
+Is this ok [y/N]: y
+Downloading Packages:
+redBorder-proxy-3.1.79-9.x86_64.rpm                                         | 220 MB     00:21
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Warning: RPMDB altered outside of yum.
+  Updating   : redBorder-proxy-3.1.79-9.x86_64                                             1/2
+chef-client already stopped
+Stopping nprobe/log (pid: 25408) [  OK  ]
+Waiting for nprobe to stop completely (pid: 25407)[  OK  ]
+Stopping rb-sociald (pid: 26242) [  OK  ]
+Stopping rb-sociald/log (pid: 26240) [  OK  ]
+Waiting for rb-sociald to stop completely (pid: 26239)[  OK  ]
+Stopping n2klocd (pid: 25542) [  OK  ]
+Stopping n2klocd/log (pid: 25541) [  OK  ]
+Waiting for n2klocd to stop completely (pid: 25540)[  OK  ]
+Stopping freeradius (pid: 25898) [  OK  ]
+Stopping freeradius/log (pid: 25897) [  OK  ]
+Waiting for freeradius to stop completely (pid: 25896)[  OK  ]
+Stopping nmspd (pid: 26031) [  OK  ]
+Stopping nmspd/log (pid: 26029) [  OK  ]
+Waiting for nmspd to stop completely (pid: 26028)[  OK  ]
+Stopping rb-snmp (pid: 26383) [  OK  ]
+Stopping rb-snmp/log (pid: 26382) [  OK  ]
+Waiting for rb-snmp to stop completely (pid: 26381)[  OK  ]
+Stopping rb-monitor (pid: 25675) [  OK  ]
+Stopping rb-monitor/log (pid: 25674) [  OK  ]
+Waiting for rb-monitor to stop completely (pid: 25673)[  OK  ]
+Stopping k2http (pid: 26850) [  OK  ]
+Stopping k2http/log (pid: 26847) [  OK  ]
+Waiting for k2http to stop completely (pid: 26846)[  OK  ]
+Stopping rb-apspoller (pid: 26639) [  OK  ]
+Stopping rb-apspoller/log (pid: 26637) [  OK  ]
+Waiting for rb-apspoller to stop completely (pid: 26636)[  OK  ]
+Stopping kafka (pid: 22672) [  OK  ]
+Stopping kafka/log (pid: 22671) [  OK  ]
+Waiting for kafka to stop completely (pid: 22670)[  OK  ]
+Stopping zookeeper (pid: 22514) [  OK  ]
+Stopping zookeeper/log (pid: 22512) [  OK  ]
+Waiting for zookeeper to stop completely (pid: 22511)[  OK  ]
+rb-register already stopped
+Iniciando snmpd:
+Iniciando ntpd:
+       - installing ruby version manager (RVM) ... done
+Starting zookeeper (pid 1809) 3s; log: (pid 1806) 3s[  OK  ]
+Starting kafka (pid 1922) 3s; log: (pid 1919) 3s[  OK  ]
+Starting k2http (pid 2274) 3s; log: (pid 2273) 3s[  OK  ]
+Starting nprobe (pid 2364) 3s; log: (pid 2361) 3s[  OK  ]
+Starting rb-sociald (pid 2452) 3s; log: (pid 2449) 3s[  OK  ]
+Starting rb-snmp (pid 2548) 3s; log: (pid 2545) 3s[  OK  ]
+Starting nmspd (pid 2654) 3s; log: (pid 2651) 3s[  OK  ]
+Starting n2klocd (pid 2818) 3s; log: (pid 2816) 3s[  OK  ]
+Starting freeradius (pid 2905) 3s; log: (pid 2903) 3s[  OK  ]
+Starting rb-monitor (pid 2991) 3s; log: (pid 2988) 3s[  OK  ]
+Starting rb-apspoller (pid 3175) 3s; log: (pid 3172) 3s[  OK  ]
+Starting chef-client (pid 3343) 3s; log: (pid 3342) 3s[  OK  ]
+  Cleanup    : redBorder-proxy-3.1.79-7.x86_64                                             2/2
+  Verifying  : redBorder-proxy-3.1.79-9.x86_64                                             1/2
+  Verifying  : redBorder-proxy-3.1.79-7.x86_64                                             2/2
+
+Updated:
+  redBorder-proxy.x86_64 0:3.1.79-9
+
+Complete!</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Este proceso puede tardar varios minutos</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Tras esto, el client proxy estará actualizado a la última versión disponible en el repositorio.</p>
 </div>
 </div>
 </div>

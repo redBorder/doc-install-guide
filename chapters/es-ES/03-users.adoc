@@ -1,0 +1,67 @@
+== Capítulo 3: Gestión de usuarios
+
+El alta o modificación de los datos de los usuarios, la gestión de sus permisos o la creación de nuevos registros es posible desde la
+interfaz de gestión de usuarios, accesible en *Tools -> Users*.
+
+image::images/users/users-01.png["users-01",align="center"]
+
+Para buscar un usuario concreto es posible introducir sus datos en el buscador, o bien, navegar por el listado alfabético que se
+muestra sobre los usuarios dados de alta.
+
+image::images/users/users-02.png["users-02",align="center"]
+
+Sólo los usuarios con el rol de *Administrador de dominio* tiene habilitada esta función para poder administrar a los usuarios de su dominio.
+El resto de usuarios sólo podrá visualizar las diferentes secciones de la plataforma, pero no modificar su contenido (salvo en el caso de
+su propio perfil de usuario).
+
+Además de los administradores de dominio, existe un usuario Super Administrador que puede administrar a todos los usuarios registrados
+en la plataforma.
+
+IMPORTANT: Un usuario es *Super Administrador* sólo si es Administrador y su Top Domain es root
+
+En el cuerpo de esta vista encontramos un listado de los usuarios dados de alta en la plataforma redborder,
+dirección de correo electrónico, Top Domain (máximo nivel al que tiene acceso el usuario), número de veces que
+ha hecho login, la IP y la hora desde las cuales realizó el último acceso.
+
+También podemos encontrar 2 botones en cada línea de usuario:
+
+* Botón de configuración de usuario
+* Botón para eliminar usuario
+
+Para acceder directamente al menú de configuración de nuestro perfil de usuario, podemos hacerlo también pulsando sobre
+el nombre de usuario que aparece en la barra superior de herramientas, y pulsar sobre el botón *My profile*
+
+image::images/users/users-04.png["users-04",align="center"]
+
+En éste área podemos encontrar también el botón de ayuda *Show help* y de *Logout*. Además nos aparecerán notificaciones
+relacionadas con la actividad del usuario.
+
+=== Configuración de usuarios
+
+Haciendo clic en el botón de configuración de un usuario podemos modificar los siguientes datos y visualizar
+un resumen de su estado y actividad dentro de la plataforma.
+
+image::images/users/users-03.png["users-03",align="center"]
+
+En el menú de configuración de usuario nos encontraremos las siguientes secciones:
+
+* *Menú principal*
+** Administrator: Si lo activamos convertimos al usuario en Adminsitrador de dominio establecido en "Top Domain".
+** Nombre
+** Login/Username
+** Email
+** Top Domain: Dominio superior máximo al que el usuario puede acceder. El dominio de más alto nivel es *root*.
+** Another actions: Nos encontramos 3 botones para realizar las siguientes acciones:
+*** Edit password: Cambiar la contraseña de usuario.
+*** Recreate API Access Key: Regenerar la clave para acceso a la API Rest.
+*** Copy API Key to clipboard: Copiar la clave de acceso a la API Rest.
+
+* *Menú Personalization*
+** User home page: Página de inicio que debe de aparecer tras el login de usuario.
+** Items per page: Número de eventos por defecto que se muestran en las secciones de visualización de datos.
+** Better letter size: Tamaño de fuente.
+
+* *Menú Stats*: Muestra estadísticas de uso de la plataforma por parte del usuario.
+
+IMPORTANT: Cada vez que deseemos modificar nuestra propia cuenta de usuario deberemos introducir la contraseña para poder aplicar los cambios.
+

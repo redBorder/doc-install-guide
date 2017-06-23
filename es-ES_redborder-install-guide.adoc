@@ -18,4 +18,9 @@
 = redborder install guide
 
 include::chapters/es-ES/01-install.adoc[]
+include::chapters/es-ES/02-license.adoc[]
+include::chapters/es-ES/03-users.adoc[]
+include::chapters/es-ES/04-sensors.adoc[]
+include::chapters/es-ES/05-update.adoc[]
+include::chapters/es-ES/06-client-proxy.adoc[]
 

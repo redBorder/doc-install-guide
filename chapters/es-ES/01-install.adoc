@@ -151,3 +151,6 @@ Este proceso puede tardar varios minutos
 *Primera conexión a la aplicación web*
 
 Una vez se haya instalado y configurado el software, se podrá acceder a la aplicación web conectando mediante un navegador a la URL `https://IP-de-gestion` usando como usuario y password por defecto `admin` (usuario) y `redborder` (password). Para la conexión por consola, se puede hacer por consola directa (tty) o remota (ssh) usando el usuario root y el password suministrado durante el proceso de instalación, que por defecto es `redborder`.
+
+image::images/install/install-10.png["install-10",align="center"]
+

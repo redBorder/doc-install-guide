@@ -1,0 +1,163 @@
+== Capítulo 8: Client Proxy
+
+=== 8.1 Introducción
+
+El client proxy (proxy cliente) es un tipo especial de sensor. Más que un sensor, en realidad se trata de un sistema que representa al cluster allá donde se instale y al que se le pueden asociar sensores directamente. Su principal utilidad es poder instalarlo y asociarle sensores en redes e instalaciones que, por política de seguridad, no pueden acceder directamente al cluster de managers (o al servicio en la nube).
+
+=== 8.2 Instalación
+
+Para la instalación, se procederá de un modo muy similar al manager. Usando la misma imagen ISO, cuando arranuqe y muestre el menú de instalación, seleccionaremos "Install Client Proxy".
+
+image::images/client-proxy/install-01.png[align="center"]
+
+Tras esto, nos saldrá una lista de preguntas con respuestas por defecto, igual que el proceso de instalación del manager, salvo que al final nos preguntará por la URL del cluster al que conectar, con la URL de la cloud valor por defecto (visualizer.networkcloudmanager.com)
+
+image::images/client-proxy/install-02.png[align="center"]
+
+Comienza por fin el proceso de instalación.
+
+Una vez finalizado, el sistema se reiniciará y nos aparecerá la terminal con el siguiente contenido:
+
+image::images/client-proxy/install-03.png[align="center"]
+
+En él, aparece información relativa al UUID asignado al client proxy, su dirección IP, la MAC e información sobre los servicios del cluster a los que representa:
+
+=== 8.3 Registro
+
+Tras la instalación del client proxy, se requiere un paso más que consistirá en el registro del equipo en el cluster (ya sea on-premise o cluster en la nube). Para que este paso se cumpla con éxito, el client proxy deberá tener acceso https/443 al cluster (on-premise o en la nube) sin restricciones.
+
+El primer paso para el proceso de registro consiste en que el client proxy se identifica en el cluster como un sensor sin reclamar. Como el UUID del client proxy es conocido en el proceso de instalación, deberemos usar dicho UUID para localizar el equipo en la lista de sensores sin reclamar. Para ello, entramos en la web de redborder y vamos a Sensors -> add sensor -> Claim proxy.
+
+image::images/client-proxy/install-04.png[align="center"]
+
+A continuación le ponemos un nombre y el UUID que mostró en la instalación.
+
+image::images/client-proxy/install-05.png[align="center"]
+
+Si el client proxy con ese UUID realmente está entre los no reclamados, el sistema lo localizará y lo asignará al namespace al que pertenece el usuario como un sensor más.
+
+En principio, mientras se esté configurando así se indicará en su estado.
+
+image::images/client-proxy/install-06.png[align="center"]
+
+Si todo ha ido bien, una vez terminada la configuración y el proceso de registro y reclamación, aparecerá su nuevo estado:
+
+image::images/client-proxy/install-07.png[align="center"]
+
+=== 8.4 Gestión de sensores
+
+Se pueden dar de alta sensores gestionados por el client proxy de una manera muy similar a como se hace en el cluster directamente. Para ello, hay que ir a la vista de sensores, y en la fila del client proxy, a la derecha, aparece el botón del menú, al hacer click aparecerán las opciones siguientes:
+
+* *Edit*: Accede a la vista de información del client proxy.
+* *Add Sensor*: Permite añadir sensores al client proxy.
+
+image::images/client-proxy/install-08.png[align="center"]
+
+=== 8.5 Actualización
+
+La actualización del client proxy se realiza de igual forma que cualquier paquete de software de la distribución, mediante un repositorio yum. Para ello, ejecutaremos:
+
+----
+[root@cp-9355 ~]# yum update redBorder-proxy
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.tedra.es
+ * elrepo: mirrors.coreix.net
+ * epel: mir01.syntis.net
+ * extras: mirror.tedra.es
+ * updates: mirror.tedra.es
+Setting up Update Process
+Resolving Dependencies
+--> Running transaction check
+---> Package redBorder-proxy.x86_64 0:3.1.79-7 will be updated
+---> Package redBorder-proxy.x86_64 0:3.1.79-9 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===============================================================================================
+ Package                      Arch                Version             Repository          Size
+===============================================================================================
+Updating:
+ redBorder-proxy              x86_64              3.1.79-9            redBorder          220 M
+
+Transaction Summary
+===============================================================================================
+Upgrade       1 Package(s)
+
+Total download size: 220 M
+Is this ok [y/N]: y
+Downloading Packages:
+redBorder-proxy-3.1.79-9.x86_64.rpm                                         | 220 MB     00:21
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Warning: RPMDB altered outside of yum.
+  Updating   : redBorder-proxy-3.1.79-9.x86_64                                             1/2
+chef-client already stopped
+Stopping nprobe/log (pid: 25408) [  OK  ]
+Waiting for nprobe to stop completely (pid: 25407)[  OK  ]
+Stopping rb-sociald (pid: 26242) [  OK  ]
+Stopping rb-sociald/log (pid: 26240) [  OK  ]
+Waiting for rb-sociald to stop completely (pid: 26239)[  OK  ]
+Stopping n2klocd (pid: 25542) [  OK  ]
+Stopping n2klocd/log (pid: 25541) [  OK  ]
+Waiting for n2klocd to stop completely (pid: 25540)[  OK  ]
+Stopping freeradius (pid: 25898) [  OK  ]
+Stopping freeradius/log (pid: 25897) [  OK  ]
+Waiting for freeradius to stop completely (pid: 25896)[  OK  ]
+Stopping nmspd (pid: 26031) [  OK  ]
+Stopping nmspd/log (pid: 26029) [  OK  ]
+Waiting for nmspd to stop completely (pid: 26028)[  OK  ]
+Stopping rb-snmp (pid: 26383) [  OK  ]
+Stopping rb-snmp/log (pid: 26382) [  OK  ]
+Waiting for rb-snmp to stop completely (pid: 26381)[  OK  ]
+Stopping rb-monitor (pid: 25675) [  OK  ]
+Stopping rb-monitor/log (pid: 25674) [  OK  ]
+Waiting for rb-monitor to stop completely (pid: 25673)[  OK  ]
+Stopping k2http (pid: 26850) [  OK  ]
+Stopping k2http/log (pid: 26847) [  OK  ]
+Waiting for k2http to stop completely (pid: 26846)[  OK  ]
+Stopping rb-apspoller (pid: 26639) [  OK  ]
+Stopping rb-apspoller/log (pid: 26637) [  OK  ]
+Waiting for rb-apspoller to stop completely (pid: 26636)[  OK  ]
+Stopping kafka (pid: 22672) [  OK  ]
+Stopping kafka/log (pid: 22671) [  OK  ]
+Waiting for kafka to stop completely (pid: 22670)[  OK  ]
+Stopping zookeeper (pid: 22514) [  OK  ]
+Stopping zookeeper/log (pid: 22512) [  OK  ]
+Waiting for zookeeper to stop completely (pid: 22511)[  OK  ]
+rb-register already stopped
+Iniciando snmpd:
+Iniciando ntpd:
+       - installing ruby version manager (RVM) ... done
+Starting zookeeper (pid 1809) 3s; log: (pid 1806) 3s[  OK  ]
+Starting kafka (pid 1922) 3s; log: (pid 1919) 3s[  OK  ]
+Starting k2http (pid 2274) 3s; log: (pid 2273) 3s[  OK  ]
+Starting nprobe (pid 2364) 3s; log: (pid 2361) 3s[  OK  ]
+Starting rb-sociald (pid 2452) 3s; log: (pid 2449) 3s[  OK  ]
+Starting rb-snmp (pid 2548) 3s; log: (pid 2545) 3s[  OK  ]
+Starting nmspd (pid 2654) 3s; log: (pid 2651) 3s[  OK  ]
+Starting n2klocd (pid 2818) 3s; log: (pid 2816) 3s[  OK  ]
+Starting freeradius (pid 2905) 3s; log: (pid 2903) 3s[  OK  ]
+Starting rb-monitor (pid 2991) 3s; log: (pid 2988) 3s[  OK  ]
+Starting rb-apspoller (pid 3175) 3s; log: (pid 3172) 3s[  OK  ]
+Starting chef-client (pid 3343) 3s; log: (pid 3342) 3s[  OK  ]
+  Cleanup    : redBorder-proxy-3.1.79-7.x86_64                                             2/2
+  Verifying  : redBorder-proxy-3.1.79-9.x86_64                                             1/2
+  Verifying  : redBorder-proxy-3.1.79-7.x86_64                                             2/2
+
+Updated:
+  redBorder-proxy.x86_64 0:3.1.79-9
+
+Complete!
+----
+
+[NOTE]
+===============================
+Este proceso puede tardar varios minutos
+===============================
+
+Tras esto, el client proxy estará actualizado a la última versión disponible en el repositorio.
+

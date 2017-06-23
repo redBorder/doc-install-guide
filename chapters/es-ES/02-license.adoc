@@ -1,0 +1,38 @@
+== Capítulo 2: Licencias
+
+En este capítulo se describe el proceso para licenciar sensores en la plataforma redborder.
+
+Es necesario disponer de una licencia válida para poder dar de alta sensores y visualizar datos. Si intentamos dar de alta
+un nuevo sensor sin disponer de una licencia válida, nos aparecerá un mensaje indicando que es necesario solicitar una licencia.
+
+image::images/license/license-06.png["license-06",align="center"]
+
+Para acceder al menú de gestión de licencias tenemos que autenticarnos como administrador en el manager.
+A través de la interfaz web nos dirigimos a *Tools -> Licenses*.
+
+image::images/license/license-01.png["license-01",align="center"]
+
+Dentro de esta vista podemos gestionar las licencias que tenemos cargadas en el manager.
+
+image::images/license/license-02.png["license-02",align="center"]
+
+En una instalación nueva nos encontraremos con la vista que se muestra arriba, donde aún no se ha cargado ninguna licencia.
+
+Para obtener una licencia debemos pulsar en el botón "Request license". Nos aparecerá un formulario donde tendremos que
+indicar la cantidad de MB diarios que se van a consumir y el número máximo de sensores de cada tipo.
+
+image::images/license/license-05.png["license-05",align="center"]
+
+Una vez dispongamos del archivo de licencia (extensión .lic), para cargarla en el manager pulsaremos en el botón "Upload license"
+y subiremos el archivo.
+
+A partir de este momento podremos ver la licencia cargada en ésta vista.
+
+Dentro de esta vista podemos ver todas las licencias que tenemos cargadas y activas, la cantidad de bytes diarios consumidos o
+el límite de sensores de cada tipo que podemos usar.
+
+image::images/license/license-04.png["license-04",align="center"]
+
+Un dato importante dentro de la vista de licencias es la cantidad de bytes diarios consumidos en el día actual. Si superamos este valor,
+automáticamente se dejarán de procesar eventos para los sensores asociados.
+
