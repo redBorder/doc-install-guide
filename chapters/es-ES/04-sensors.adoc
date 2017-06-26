@@ -4,7 +4,7 @@ En este capítulo se describe el procedimiento para agregar nuevos sensores y do
 
 *Sensors* se encuentra disponible en el margen superior derecho del menú de cabecera, junto a la sección *Tools* y la zona de usuario.
 
-image::images/sensors/sensors_menu.png["sensors_menu",align="center"]
+image::images/sensors/sensors-01.png["sensors-01",align="center"]
 
 === 4.1 Sensors: menú y opciones
 En este apartado se introduce de forma breve al menú *Sensors* y sus correspondientes opciones:
@@ -32,7 +32,7 @@ Para añadir un sensor debe seleccionar la opción *+Add Sensor*. En el menú de
 La forma de añadir un sensor de tipo flow es mediante la dirección IP desde la que se envían los flows.
 ===============================
 
-image::images/sensors/add_sensors_dialog.png["add_sensors_dialog",align="center"]
+image::images/sensors/sensors-02.png["sensors-02",align="center"]
 
 [IMPORTANT]
 =================================
@@ -47,9 +47,9 @@ El sensor heredará de manera automática las propiedades del dominio raíz.
 
 Para añadir un dominio se debe seleccionar la opción *+Add Domain* que se encuentra en el submenú superior derecho, elegir el tipo de dominio que se quiere añadir, y a continuación, rellenar los campos requeridos (estos variarán según el tipo de dominio a crear)
 
-image::images/sensors/add_domain_menu.png["add_domain_menu",align="center"]
-
-image::images/sensors/add_domain_dialog.png["add_domain_dialog",align="center"]
+image::images/sensors/sensors-03.png["sensors-03",align="center"]
+image::images/sensors/sensors-04.png["sensors-04",align="center"]
+image::images/sensors/sensors-05.png["sensors-05",align="center"]
 
 === 4.4 Editar un dominio
 Para acceder a la edición de un dominio se debe hacer clic en el icono "Editar" situado a la derecha del dominio que desea editar desde la vista de árbol y seleccionar la opción *Edit*.
