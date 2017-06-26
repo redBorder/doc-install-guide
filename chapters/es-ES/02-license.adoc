@@ -31,8 +31,9 @@ A partir de este momento podremos ver la licencia cargada en ésta vista.
 Dentro de esta vista podemos ver todas las licencias que tenemos cargadas y activas, la cantidad de bytes diarios consumidos o
 el límite de sensores de cada tipo que podemos usar.
 
-image::images/license/license-04.png["license-04",align="center"]
-
-Un dato importante dentro de la vista de licencias es la cantidad de bytes diarios consumidos en el día actual. Si superamos este valor,
-automáticamente se dejarán de procesar eventos para los sensores asociados.
+[NOTE]
+===============================
+Un dato importante dentro de la vista de licencias es la cantidad de bytes diarios consumidos en el día actual.
+Si superamos este valor, automáticamente se dejarán de procesar eventos para los sensores asociados.
+===============================
 
