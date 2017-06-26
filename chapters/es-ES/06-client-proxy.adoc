@@ -8,17 +8,17 @@ El client proxy (proxy cliente) es un tipo especial de sensor. Más que un senso
 
 Para la instalación, se procederá de un modo muy similar al manager. Usando la misma imagen ISO, cuando arranuqe y muestre el menú de instalación, seleccionaremos "Install Client Proxy".
 
-image::images/client-proxy/install-01.png[align="center"]
+image::images/client-proxy/cp-01.png[align="center"]
 
 Tras esto, nos saldrá una lista de preguntas con respuestas por defecto, igual que el proceso de instalación del manager, salvo que al final nos preguntará por la URL del cluster al que conectar, con la URL de la cloud valor por defecto (visualizer.networkcloudmanager.com)
 
-image::images/client-proxy/install-02.png[align="center"]
+image::images/client-proxy/cp-02.png[align="center"]
 
 Comienza por fin el proceso de instalación.
 
 Una vez finalizado, el sistema se reiniciará y nos aparecerá la terminal con el siguiente contenido:
 
-image::images/client-proxy/install-03.png[align="center"]
+image::images/client-proxy/cp-03.png[align="center"]
 
 En él, aparece información relativa al UUID asignado al client proxy, su dirección IP, la MAC e información sobre los servicios del cluster a los que representa:
 
@@ -28,21 +28,21 @@ Tras la instalación del client proxy, se requiere un paso más que consistirá 
 
 El primer paso para el proceso de registro consiste en que el client proxy se identifica en el cluster como un sensor sin reclamar. Como el UUID del client proxy es conocido en el proceso de instalación, deberemos usar dicho UUID para localizar el equipo en la lista de sensores sin reclamar. Para ello, entramos en la web de redborder y vamos a Sensors -> add sensor -> Claim proxy.
 
-image::images/client-proxy/install-04.png[align="center"]
+image::images/client-proxy/cp-04.png[align="center"]
 
 A continuación le ponemos un nombre y el UUID que mostró en la instalación.
 
-image::images/client-proxy/install-05.png[align="center"]
+image::images/client-proxy/cp-05.png[align="center"]
 
 Si el client proxy con ese UUID realmente está entre los no reclamados, el sistema lo localizará y lo asignará al namespace al que pertenece el usuario como un sensor más.
 
 En principio, mientras se esté configurando así se indicará en su estado.
 
-image::images/client-proxy/install-06.png[align="center"]
+image::images/client-proxy/cp-06.png[align="center"]
 
 Si todo ha ido bien, una vez terminada la configuración y el proceso de registro y reclamación, aparecerá su nuevo estado:
 
-image::images/client-proxy/install-07.png[align="center"]
+image::images/client-proxy/cp-07.png[align="center"]
 
 === 6.4 Gestión de sensores
 
@@ -51,7 +51,7 @@ Se pueden dar de alta sensores gestionados por el client proxy de una manera muy
 * *Edit*: Accede a la vista de información del client proxy.
 * *Add Sensor*: Permite añadir sensores al client proxy.
 
-image::images/client-proxy/install-08.png[align="center"]
+image::images/client-proxy/cp-08.png[align="center"]
 
 === 6.5 Actualización
 
