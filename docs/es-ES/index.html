@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="keywords" content="redborder, quickstart, guide, manual">
 <meta name="author" content="redborder">
 <title>redborder install guide</title>
@@ -697,7 +697,7 @@ b.conum * { color: inherit !important; }
 .literalblock pre, .listingblock pre { background: #333333; }
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -730,19 +730,19 @@ b.conum * { color: inherit !important; }
 <li><a href="#_4_4_editar_un_dominio">4.4 Editar un dominio</a></li>
 </ul>
 </li>
-<li><a href="#_capítulo_7_actualización_del_cluster">Capítulo 7: Actualización del cluster</a>
+<li><a href="#_capítulo_5_actualización_del_cluster">Capítulo 5: Actualización del cluster</a>
 <ul class="sectlevel2">
 <li><a href="#_actualización_desde_repositorio_remoto">Actualización desde repositorio remoto</a></li>
 <li><a href="#_actualización_desde_iso_offline_mode">Actualización desde ISO (offline mode)</a></li>
 </ul>
 </li>
-<li><a href="#_capítulo_8_client_proxy">Capítulo 8: Client Proxy</a>
+<li><a href="#_capítulo_6_client_proxy">Capítulo 6: Client Proxy</a>
 <ul class="sectlevel2">
-<li><a href="#_8_1_introducción">8.1 Introducción</a></li>
-<li><a href="#_8_2_instalación">8.2 Instalación</a></li>
-<li><a href="#_8_3_registro">8.3 Registro</a></li>
-<li><a href="#_8_4_gestión_de_sensores">8.4 Gestión de sensores</a></li>
-<li><a href="#_8_5_actualización">8.5 Actualización</a></li>
+<li><a href="#_6_1_introducción">6.1 Introducción</a></li>
+<li><a href="#_6_2_instalación">6.2 Instalación</a></li>
+<li><a href="#_6_3_registro">6.3 Registro</a></li>
+<li><a href="#_6_4_gestión_de_sensores">6.4 Gestión de sensores</a></li>
+<li><a href="#_6_5_actualización">6.5 Actualización</a></li>
 </ul>
 </li>
 </ul>
@@ -1473,7 +1473,7 @@ Cada vista presenta su propio menú de opciones y las diferentes posibilidades d
 </div>
 </div>
 <div class="sect1">
-<h2 id="_capítulo_7_actualización_del_cluster">Capítulo 7: Actualización del cluster</h2>
+<h2 id="_capítulo_5_actualización_del_cluster">Capítulo 5: Actualización del cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>En este capítulo se describe el procedimiento para actualizar un cluster de servidores Manager de redborder.</p>
@@ -1645,16 +1645,16 @@ Are you sure you want to continue? (y/N) y</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_capítulo_8_client_proxy">Capítulo 8: Client Proxy</h2>
+<h2 id="_capítulo_6_client_proxy">Capítulo 6: Client Proxy</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_8_1_introducción">8.1 Introducción</h3>
+<h3 id="_6_1_introducción">6.1 Introducción</h3>
 <div class="paragraph">
 <p>El client proxy (proxy cliente) es un tipo especial de sensor. Más que un sensor, en realidad se trata de un sistema que representa al cluster allá donde se instale y al que se le pueden asociar sensores directamente. Su principal utilidad es poder instalarlo y asociarle sensores en redes e instalaciones que, por política de seguridad, no pueden acceder directamente al cluster de managers (o al servicio en la nube).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_2_instalación">8.2 Instalación</h3>
+<h3 id="_6_2_instalación">6.2 Instalación</h3>
 <div class="paragraph">
 <p>Para la instalación, se procederá de un modo muy similar al manager. Usando la misma imagen ISO, cuando arranuqe y muestre el menú de instalación, seleccionaremos "Install Client Proxy".</p>
 </div>
@@ -1687,7 +1687,7 @@ Are you sure you want to continue? (y/N) y</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_3_registro">8.3 Registro</h3>
+<h3 id="_6_3_registro">6.3 Registro</h3>
 <div class="paragraph">
 <p>Tras la instalación del client proxy, se requiere un paso más que consistirá en el registro del equipo en el cluster (ya sea on-premise o cluster en la nube). Para que este paso se cumpla con éxito, el client proxy deberá tener acceso https/443 al cluster (on-premise o en la nube) sin restricciones.</p>
 </div>
@@ -1728,7 +1728,7 @@ Are you sure you want to continue? (y/N) y</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_4_gestión_de_sensores">8.4 Gestión de sensores</h3>
+<h3 id="_6_4_gestión_de_sensores">6.4 Gestión de sensores</h3>
 <div class="paragraph">
 <p>Se pueden dar de alta sensores gestionados por el client proxy de una manera muy similar a como se hace en el cluster directamente. Para ello, hay que ir a la vista de sensores, y en la fila del client proxy, a la derecha, aparece el botón del menú, al hacer click aparecerán las opciones siguientes:</p>
 </div>
@@ -1749,7 +1749,7 @@ Are you sure you want to continue? (y/N) y</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_5_actualización">8.5 Actualización</h3>
+<h3 id="_6_5_actualización">6.5 Actualización</h3>
 <div class="paragraph">
 <p>La actualización del client proxy se realiza de igual forma que cualquier paquete de software de la distribución, mediante un repositorio yum. Para ello, ejecutaremos:</p>
 </div>

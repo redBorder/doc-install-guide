@@ -1,4 +1,4 @@
-== Capítulo 7: Actualización del cluster
+== Capítulo 5: Actualización del cluster
 
 En este capítulo se describe el procedimiento para actualizar un cluster de servidores Manager de redborder.
 

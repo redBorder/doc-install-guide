@@ -1,10 +1,10 @@
-== Capítulo 8: Client Proxy
+== Capítulo 6: Client Proxy
 
-=== 8.1 Introducción
+=== 6.1 Introducción
 
 El client proxy (proxy cliente) es un tipo especial de sensor. Más que un sensor, en realidad se trata de un sistema que representa al cluster allá donde se instale y al que se le pueden asociar sensores directamente. Su principal utilidad es poder instalarlo y asociarle sensores en redes e instalaciones que, por política de seguridad, no pueden acceder directamente al cluster de managers (o al servicio en la nube).
 
-=== 8.2 Instalación
+=== 6.2 Instalación
 
 Para la instalación, se procederá de un modo muy similar al manager. Usando la misma imagen ISO, cuando arranuqe y muestre el menú de instalación, seleccionaremos "Install Client Proxy".
 
@@ -22,7 +22,7 @@ image::images/client-proxy/install-03.png[align="center"]
 
 En él, aparece información relativa al UUID asignado al client proxy, su dirección IP, la MAC e información sobre los servicios del cluster a los que representa:
 
-=== 8.3 Registro
+=== 6.3 Registro
 
 Tras la instalación del client proxy, se requiere un paso más que consistirá en el registro del equipo en el cluster (ya sea on-premise o cluster en la nube). Para que este paso se cumpla con éxito, el client proxy deberá tener acceso https/443 al cluster (on-premise o en la nube) sin restricciones.
 
@@ -44,7 +44,7 @@ Si todo ha ido bien, una vez terminada la configuración y el proceso de registr
 
 image::images/client-proxy/install-07.png[align="center"]
 
-=== 8.4 Gestión de sensores
+=== 6.4 Gestión de sensores
 
 Se pueden dar de alta sensores gestionados por el client proxy de una manera muy similar a como se hace en el cluster directamente. Para ello, hay que ir a la vista de sensores, y en la fila del client proxy, a la derecha, aparece el botón del menú, al hacer click aparecerán las opciones siguientes:
 
@@ -53,7 +53,7 @@ Se pueden dar de alta sensores gestionados por el client proxy de una manera muy
 
 image::images/client-proxy/install-08.png[align="center"]
 
-=== 8.5 Actualización
+=== 6.5 Actualización
 
 La actualización del client proxy se realiza de igual forma que cualquier paquete de software de la distribución, mediante un repositorio yum. Para ello, ejecutaremos:
 
